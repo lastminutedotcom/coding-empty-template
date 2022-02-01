@@ -1,13 +1,12 @@
 package com.lastminute.interview.urlshortener;
 
-import org.junit.*;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 class UrlShortenerTest {
 
   @Test
   void shorten() {
-    Assert.assertEquals(
+    Assertions.assertEquals(
         "http://short.com/S1", UrlShortener.shorten("http://loooooong.url/any", "S1"));
   }
 }
