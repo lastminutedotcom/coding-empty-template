@@ -5,13 +5,13 @@ We will need a couple of features in our shortener.
 Let's assume we are working on a library to be reused in other projects.
 
 ## 1. Shorten a URL with a custom keyword
-The first feature that our product experts think we need it the generation of a short URL where the user can actually choose the "name" for his shortened URL, giving a specific "keyword" as input.    
+The first feature that our product experts think we need is the generation of a short URL where the user shorten a URL choosing a specific "keyword" to bind to the URL.    
 We want the user to give in input:
-- a URL
+- the URL he wants to shorten
 - a custom keyword
 
 And we want the system to give back to the user his short URL.
-The base URL for short urls will be http://short.com.
+The base URL for short urls will always be http://short.com.
 
 Here is some example:
 * example 1
@@ -20,13 +20,13 @@ Here is some example:
   * expected output: http://short.com/S1
 
 * example 2
-  * input URL: https://anotherlong.com/anypath/myPage
-  * input keyword: S2
+  * input URL: https://anotherlong.com/anypath/my-page
+  * input keyword: P1
   * expected output: http://short.com/S2
   
 
 ## 2. Retrieve a shortened URL 
-Now that our users are able to generate short URLs, we need to give them the possibility to get back the original one.  
+Now that our users are able to generate short URLs, we need to give them the possibility to get back the original one.
 We want the user to input:
 * a shortened URL
 
@@ -37,11 +37,9 @@ Example
 * input URL: http://short.com/S1
 * expected output: http://looooong.com/somepath/newService
 
-Right now we do not expect any kind of persistence, every time we restart the system, we can lose our data.
-
 
 ## 3. Validate the keyword
-We discovered that users tend to chose keyword too long or too short, so we want to enforce some constraint: keyword length must be between 10 and 20 chars. 
+We discovered that users tend to chose keyword too long or too short, so we want to enforce some constraint: keyword length must be between 4 and 15 chars.
 
 
 ## 4. Generate a random shortened URL
